@@ -29,6 +29,10 @@ function getData(e){
                 ui.showUserInfo(response.user);
                 ui.showRepoInfo(response.repo);
                 ui.showMessage("tebrikler..","success");
+                
+                ui.addSearchedUserToUI(username); //once bunu yazdik,storage a bakip ayni isim varsa eklemeyecek
+                Storage.addSearchedUserToStorage(username);
+                
             }
         })
         .catch(err=>ui.showMessage("err","danger"))
@@ -44,5 +48,15 @@ function clearAllSearched(){
 }
 
 function getAllSearched(){
+
+    
+    let users=Storage.getSearchedUsersFromStorage();
+
+    let result="";//farkli bir yontemle ekledik
+    users.forEach(user=>{
+        result+=`<li class="list-group-item">${user}</li>`
+    })
+
+    lastUsers.innerHTML=result;
 
 }

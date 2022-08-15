@@ -112,4 +112,20 @@ class UI{
         })
 
     }
+
+    addSearchedUserToUI(username){
+        // yine daha once eklenmemisse ekleme yapicaz
+     
+        let users=Storage.getSearchedUsersFromStorage();
+
+        if(users.indexOf(username)===-1){
+            const li=document.createElement("li");
+            li.className="list-group-item";
+            li.textContent=username;
+
+            // daha once sectigimiz ul nin altina ekleyelim
+            this.lastUsers.appendChild(li);
+        }
+
+    }
 }
