@@ -27,6 +27,7 @@ function getData(e){
                 ui.showMessage("kullanici bulunamadi..","danger");
             }else{
                 ui.showUserInfo(response.user);
+                ui.showRepoInfo(response.repo);
                 ui.showMessage("tebrikler..","success");
             }
         })
