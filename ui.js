@@ -14,6 +14,7 @@ class UI{
 
         // card body altina hata mesaji yazdirmak icin seciyorum
         this.cardBody=document.querySelector(".card-body");
+        
     }
 
 
@@ -128,4 +129,23 @@ class UI{
         }
 
     }
+
+
+
+
+    
+
+    clearAllSearchedFromUI(){
+
+        // this.lastUsers.innerHTML=""; bu daha hizli cikti
+       
+       
+        while(this.lastUsers.firstElementChild !== null){
+            this.lastUsers.removeChild(this.lastUsers.firstElementChild)
+        
+            
+        }
+
+    }
+    
 }
